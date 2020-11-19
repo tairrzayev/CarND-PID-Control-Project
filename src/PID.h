@@ -31,6 +31,9 @@ class PID {
    */
   double TotalError();
 
+  double GetSteer();
+  double GetThrottle();
+
  private:
   /**
    * PID Errors
@@ -38,6 +41,10 @@ class PID {
   double p_error;
   double i_error;
   double d_error;
+  double prev_p_error;
+
+  double steer;
+  double throttle;
 
   /**
    * PID Coefficients
