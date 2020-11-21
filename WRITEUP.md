@@ -12,10 +12,10 @@
 
 The values were selected empirically. 
 
-The `P` value seem to work best when it's in the range of (0.1, 03).
-The `I` value is set to `0.001`. If set to a magnitude higher (`0.01`), the initial integral error affects steering to much, does not timely converge to specific value, resulting into car locking the steering to the min / max angle and going off the track. [Here's the video](./video/i_too_large.mov) with `I` coefficient set to a large value.
+The `P` value seem to work best when it's in the range of (0.1, 03). Selected value `0.2` worked best with the selected `I` value. Higher values would result into growing oscilations, throwing the car off the track, lower values would result into understeer and car going off the track.
+The `I` value is set to `0.001`. If set to a magnitude higher (`0.01`), the initial integral error affects steering to much, does not timely converge to specific value, resulting into car locking the steering to the min / max angle and going off the track. [Here's the video](./video/i_too_large.mov) with `I` coefficient set to a large value. Chosen value `0.001` dampens it enough to avoid initial oversteer.
 
-The `D` value is set to `5`, which is enough to dampen the oscilations for the selected `P` value. `D` can be set to much larger value (tested with `100`) but the steering gets too twitchy in that case.
+The `D` value is set to `7`, which is enough to dampen the oscilations for the selected `P` value. `D` can be set to much larger value (tested with `100`) but the steering gets too "twitchy" in that case.
 
 
 ## Throttle

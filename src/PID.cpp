@@ -34,9 +34,8 @@ void PID::UpdateError(double cte) {
   prev_p_error = cte;
 
   steer = clip(TotalError(), -1, 1);
-  
 
-  throttle = clip(1 - steer * 50, 0.01, 1);
+  throttle = clip(1 - steer * 50, 0.1, 0.5);
 }
 
 double PID::TotalError() {
